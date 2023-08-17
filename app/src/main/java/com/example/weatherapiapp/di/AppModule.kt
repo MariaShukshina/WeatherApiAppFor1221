@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.weatherapiapp.data.WeatherApiRepositoryImpl
 import com.example.weatherapiapp.domain.WeatherApiRepository
 import com.example.weatherapiapp.retrofit.WeatherAppApi
-import com.example.weatherapiapp.utils.Constants.Companion.BASE_URL
+import com.example.weatherapiapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

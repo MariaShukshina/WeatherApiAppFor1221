@@ -6,8 +6,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.weatherapiapp.R
 import com.example.weatherapiapp.databinding.ActivityMainBinding
-import com.example.weatherapiapp.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.searchButton.setOnClickListener {
             if(viewModel.internetConnectionState.value == true) {
-                viewModel.getWeather(searchQuery, 5, Constants(this).key)
+                viewModel.getWeather(searchQuery, 5, this.getString(R.string.api_key))
             } else {
                 Toast.makeText(this, "No internet connection", Toast.LENGTH_SHORT).show()
             }

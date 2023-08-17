@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.Glide.init
+import com.example.weatherapiapp.R
 import com.example.weatherapiapp.domain.WeatherApiRepository
 import com.example.weatherapiapp.response.WeatherResponse
 import com.example.weatherapiapp.utils.Constants
@@ -46,7 +47,7 @@ class MainActivityViewModel @Inject constructor(
                 override fun onAvailable(network: Network) {
                     _internetConnectionState.postValue(true)
                     getWeather("moscow",
-                        5, Constants(context).key)
+                        5, context.getString(R.string.api_key))
                 }
 
                 override fun onLost(network: Network) {
