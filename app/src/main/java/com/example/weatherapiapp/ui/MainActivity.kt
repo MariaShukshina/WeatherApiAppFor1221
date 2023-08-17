@@ -63,7 +63,8 @@ class MainActivity : AppCompatActivity() {
                 binding.conditionTextTv.text = "Condition: ${it.current.condition.text}"
                 binding.avgHumidityTv.text = "Average humidity: ${it.forecast.forecastday
                     .first().day.avghumidity}"
-            } ?: run {
+            }
+            if (viewModel.isDataRequested && it == null) {
                 Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
             }
         }

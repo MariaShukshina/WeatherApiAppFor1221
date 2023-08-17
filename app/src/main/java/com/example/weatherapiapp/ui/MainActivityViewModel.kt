@@ -6,6 +6,7 @@ import android.net.Network
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bumptech.glide.Glide.init
 import com.example.weatherapiapp.domain.WeatherApiRepository
 import com.example.weatherapiapp.response.WeatherResponse
 import com.example.weatherapiapp.utils.Constants
@@ -30,6 +31,11 @@ class MainActivityViewModel @Inject constructor(
     private val _internetConnectionState = MutableLiveData(false)
     val internetConnectionState
         get() = _internetConnectionState
+
+    private var _isDataRequested = false
+    val isDataRequested
+        get() = _isDataRequested
+
 
     init {
         viewModelScope.launch {
@@ -61,6 +67,7 @@ class MainActivityViewModel @Inject constructor(
                         return
                     }
                     _weatherResponse.postValue(response.body())
+                    _isDataRequested = true
                 }
 
                 override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
