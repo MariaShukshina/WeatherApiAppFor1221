@@ -54,14 +54,17 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     it.current.condition.icon
                 }
+                binding.locationTv.text = it.location.name
                 Glide.with(this).load(iconUrl).into(binding.weatherIcon)
                 binding.avgTempTv.text = "Average temperature: ${it.forecast.forecastday
-                    .first().day.avgtemp_c}"
+                    .first().day.avgtemp_c}C"
                 binding.maxWindTv.text = "Max wind: ${it.forecast.forecastday.first()
-                    .day.maxwind_kph}"
+                    .day.maxwind_kph} kph"
                 binding.conditionTextTv.text = "Condition: ${it.current.condition.text}"
                 binding.avgHumidityTv.text = "Average humidity: ${it.forecast.forecastday
                     .first().day.avghumidity}"
+            } ?: run {
+                Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show()
             }
         }
     }
