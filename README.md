@@ -1,5 +1,5 @@
 # WeatherApiAppFor1221
-Weather app that I made to apply for internship.
+Test weather app.
 
 ## For run
 Если вы хотите запустить приложение, пожалуйста, напишите свой API key в поле API_KEY класса Constants:
