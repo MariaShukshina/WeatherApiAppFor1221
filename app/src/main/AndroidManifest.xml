@@ -9,7 +9,7 @@
     <application
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
-        android:name="com.example.WeatherAppApplication"
+        android:name="com.mshukshina.WeatherAppApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +19,7 @@
         android:theme="@style/Base.Theme.WeatherApiApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.mshukshina.weatherapiapp.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.weatherapiapp"
+    namespace = "com.mshukshina.weatherapiapp"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.weatherapiapp"
+        applicationId = "com.mshukshina.weatherapiapp"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
